@@ -2,6 +2,7 @@ package ru.bell.gordeev.broker.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -9,12 +10,13 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="Weather")
+@Table(name="weather")
 public class Weather {
 
     @Column(name="temperature")
     private int temperature;
 
+    @Id
     @Column(name="city")
     private String city;
 
