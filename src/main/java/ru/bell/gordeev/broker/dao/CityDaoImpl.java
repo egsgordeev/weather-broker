@@ -9,7 +9,7 @@ import ru.bell.gordeev.broker.domain.Weather;
  * Created by EGordeev on 07.07.2017.
  */
 
-@Repository
+@Repository(value = "dao")
 public class CityDaoImpl implements CityDao {
 
     @Autowired

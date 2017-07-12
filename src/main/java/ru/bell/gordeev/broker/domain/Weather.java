@@ -10,7 +10,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="weather")
+@Table(name="weather_broker.weather")
 public class Weather {
 
     @Column(name="temperature")
@@ -20,7 +20,7 @@ public class Weather {
     @Column(name="city")
     private String city;
 
-    @Column(name="timeStamp")
+    @Column(name="time_stamp")
     private String timeStamp; //first version of the app will not parse the response date because of the YAGNI principle
 
     @Column(name="text")
@@ -38,7 +38,7 @@ public class Weather {
     @Override
     public String toString() {
         return "The weather in " + city + " is " + text + "\n" + "Temperature is " + temperature + " F\n" +
-                "Data were take on " + timeStamp;
+                "Data were taken on " + timeStamp;
     }
 
     public int getTemperature() {
