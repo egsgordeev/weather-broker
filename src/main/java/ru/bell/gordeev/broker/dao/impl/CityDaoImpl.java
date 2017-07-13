@@ -1,8 +1,9 @@
-package ru.bell.gordeev.broker.dao;
+package ru.bell.gordeev.broker.dao.impl;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import ru.bell.gordeev.broker.dao.CityDao;
 import ru.bell.gordeev.broker.domain.Weather;
 
 /**
@@ -10,7 +11,7 @@ import ru.bell.gordeev.broker.domain.Weather;
  */
 
 @Repository(value = "dao")
-public class CityDaoImpl implements CityDao {
+class CityDaoImpl implements CityDao {
 
     @Autowired
     private SessionFactory sessionFactory;

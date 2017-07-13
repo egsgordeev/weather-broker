@@ -26,7 +26,8 @@ public class Weather {
     @Column(name="text")
     private String text;
 
-    public Weather() {}
+    public Weather() {
+    }
 
     public Weather(int temperature, String city, String timeStamp, String text) {
         this.temperature = temperature;

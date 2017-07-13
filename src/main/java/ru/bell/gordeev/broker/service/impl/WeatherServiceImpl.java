@@ -1,16 +1,17 @@
-package ru.bell.gordeev.broker.service;
+package ru.bell.gordeev.broker.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.bell.gordeev.broker.dao.CityDao;
 import ru.bell.gordeev.broker.domain.Weather;
+import ru.bell.gordeev.broker.service.WeatherService;
 
 /**
  * Created by Sovereign on 09.07.2017.
  */
 @Service(value = "serv")
-public class WeatherServiceImpl implements WeatherService {
+class WeatherServiceImpl implements WeatherService {
     @Autowired
     private CityDao cityDao;
 
