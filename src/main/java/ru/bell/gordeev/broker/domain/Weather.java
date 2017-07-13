@@ -1,5 +1,9 @@
 package ru.bell.gordeev.broker.domain;
 
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -11,19 +15,24 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="weather_broker.weather")
+@JsonPropertyOrder({"city","date","temp","text"})
 public class Weather {
 
     @Column(name="temperature")
+    @JsonProperty("temp")
     private int temperature;
 
     @Id
     @Column(name="city")
+    @JsonProperty("city")
     private String city;
 
     @Column(name="time_stamp")
+    @JsonProperty("date")
     private String timeStamp; //first version of the app will not parse the response date because of the YAGNI principle
 
     @Column(name="text")
+    @JsonProperty("text")
     private String text;
 
     public Weather() {

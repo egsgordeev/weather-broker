@@ -9,13 +9,15 @@
     <context:annotation-config />
     <tx:annotation-driven transaction-manager="transactionManager" />
 
-    <bean id="localWeather"
-          class="ru.bell.gordeev.broker.domain.Weather" />
+
+    <bean id="rest"
+          class="org.springframework.web.client.RestTemplate" />
+    <bean id="mapper"
+          class="com.fasterxml.jackson.databind.ObjectMapper" />
     <bean id="transactionManager"
           class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
-
     <bean id="propertyConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
           p:location="/WEB-INF/jdbc.properties" />
