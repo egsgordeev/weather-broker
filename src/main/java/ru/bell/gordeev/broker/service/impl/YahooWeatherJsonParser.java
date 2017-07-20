@@ -4,8 +4,8 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.bell.gordeev.broker.domain.Weather;
 import ru.bell.gordeev.broker.service.CustomParser;
+import ru.bell.gordeev.broker.domain.Weather;
 
 import java.io.IOException;
 
@@ -13,7 +13,7 @@ import java.io.IOException;
  * Created by Sovereign on 13.07.2017.
  */
 @Service(value = "parser")
-public class YahooWeatherJsonParser implements CustomParser<Weather> {
+class YahooWeatherJsonParser implements CustomParser<Weather> {
     @Autowired
     private ObjectMapper mapper;
 
@@ -30,7 +30,7 @@ public class YahooWeatherJsonParser implements CustomParser<Weather> {
     }
 
     @Override
-    public String parseAnInstance(Weather object) {
-        return null;
+    public String parseAnInstance(Weather localWeather) throws IOException {
+        return mapper.writeValueAsString(localWeather);
     }
 }

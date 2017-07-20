@@ -3,6 +3,7 @@ package ru.bell.gordeev.broker.dao.impl;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import ru.bell.gordeev.broker.dao.CityDao;
 import ru.bell.gordeev.broker.domain.Weather;
 
@@ -11,6 +12,7 @@ import ru.bell.gordeev.broker.domain.Weather;
  */
 
 @Repository(value = "dao")
+@Transactional
 class CityDaoImpl implements CityDao {
 
     @Autowired

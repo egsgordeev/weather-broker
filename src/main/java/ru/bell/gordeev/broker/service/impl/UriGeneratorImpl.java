@@ -7,7 +7,7 @@ import ru.bell.gordeev.broker.service.UriGenerator;
  * Created by EGordeev on 13.07.2017.
  */
 @Service(value = "uriGen")
-public class UriGeneratorImpl implements UriGenerator{
+class UriGeneratorImpl implements UriGenerator {
     @Override
     public String generateUriFromKeyWord(String keyWord) {
 

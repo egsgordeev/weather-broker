@@ -1,6 +1,7 @@
 package ru.bell.gordeev.broker.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -16,6 +17,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="weather_broker.weather")
 @JsonPropertyOrder({"city","date","temp","text"})
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Weather {
 
     @Column(name="temperature")
@@ -46,8 +48,22 @@ public class Weather {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (o==this) return true;
+        if (o instanceof Weather) {
+            return city.equalsIgnoreCase(((Weather) o).city);
+        } else return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return city.hashCode();
+    }
+
+    @Override
     public String toString() {
-        return "The weather in " + city + " is " + text + "\n" + "Temperature is " + temperature + " F\n" +
+        return "The weather in " + city + " is " + text + "\n" +
+                "Temperature is " + temperature + " F\n" +
                 "Data were taken on " + timeStamp;
     }
 

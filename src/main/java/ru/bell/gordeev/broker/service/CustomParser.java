@@ -7,5 +7,5 @@ import java.io.IOException;
  */
 public interface CustomParser<T> {
     T parseToInstance(String values) throws IOException;
-    String parseAnInstance(T object);
+    String parseAnInstance(T object) throws IOException;
 }
