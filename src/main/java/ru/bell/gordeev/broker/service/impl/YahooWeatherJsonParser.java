@@ -11,6 +11,7 @@ import java.io.IOException;
 
 /**
  * Created by Sovereign on 13.07.2017.
+ * This line's only purpose is to be an instrument of git branching testing
  */
 @Service(value = "parser")
 class YahooWeatherJsonParser implements CustomParser<Weather> {
